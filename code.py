@@ -1,11 +1,10 @@
 import pandas as pd
-from urllib.request import urlretrieve
 
 url = 'https://assets.datacamp.com/production/course_2023/datasets/ebola.csv'
 
-df = pd.read_csv(url, sep=',')
+ebola = pd.read_csv(url, sep=',')
 
-print(df.head())
+print(ebola.head())
 
 # Melt ebola: ebola_melt, other column can be considered on two columns, but to split data on those to columns firstly we need to melt all data
 ebola_melt = pd.melt(ebola, id_vars=['Date', 'Day'], var_name='type_country', value_name='counts')
